@@ -1,0 +1,22 @@
+name: Build APK
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Apktool
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y apktool apksigner zipalign
+      - name: Build APK with Apktool
+        run: |
+          apktool b . -o app-unsigned.apk
+          zipalign -v -p 4 app-unsigned.apk app-aligned.apk
+          apksigner sign --ks-key-alias androiddebugkey --ks-pass pass:android --key-pass pass:android --ks /usr/local/lib/android/sdk/debug.keystore app-aligned.apk || apksigner sign --ks debug.keystore --ks-key-alias androiddebugkey --ks-pass pass:android --key-pass pass:android app-aligned.apk || cp app-aligned.apk app.apk
+          ls -lh *.apk
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: oytv-mening-apk
+          path: "*.apk"
