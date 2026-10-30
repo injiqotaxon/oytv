@@ -1,0 +1,17 @@
+
+# Oysha TV - APK ni qanday olish (STUDIO KERAK EMAS!)
+
+## 1-usul - Eng oson (1 daqiqa):
+1. github.com ga kiring, yangi repo oching: oysha-tv
+2. Shu papkadagi hamma faylni yuklang (Upload files)
+3. Tepada Actions bo'limiga kiring -> Build Oysha TV APK -> Run
+4. 2-3 daqiqadan keyin APK tayyor bo'ladi, yuklab oling!
+
+## 2-usul - Telefonda:
+AndroidIDE ilovasini o'rnating, shu zip ni oching, Build bosing.
+
+Bu APK da:
+- Qizil yozuv yo'q
+- Odam o'zi M3U link qo'shadi
+- Sekin internetda ham qotmaydi (60 sek buffer)
+- Nomi Oysha TV

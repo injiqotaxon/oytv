@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Oysha TV</string>
+    <string name="hint_m3u">M3U линк қўшинг - masalan https://.../playlist.m3u</string>
+</resources>
